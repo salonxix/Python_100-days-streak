@@ -1,0 +1,12 @@
+
+def buildArray(nums):
+    return [nums[nums[i]] for i in range(len(nums))]
+
+
+nums = list(map(int, input("Enter zero-based permutation numbers separated by space: ").split()))
+
+
+ans = buildArray(nums)
+
+
+print("Resulting array is:", ans)
