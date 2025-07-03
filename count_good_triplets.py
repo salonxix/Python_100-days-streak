@@ -1,0 +1,22 @@
+def countGoodTriplets(arr, a, b, c):
+    count = 0
+    n = len(arr)
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if abs(arr[i] - arr[j]) <= a:
+                for k in range(j + 1, n):
+                    if abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
+                        count += 1
+    return count
+
+
+# ---------- DRIVER CODE ----------
+if __name__ == "__main__":
+    arr = list(map(int, input("Enter array elements: ").split()))
+    a = int(input("Enter value for a: "))
+    b = int(input("Enter value for b: "))
+    c = int(input("Enter value for c: "))
+
+    result = countGoodTriplets(arr, a, b, c)
+    print("Number of good triplets:", result)
